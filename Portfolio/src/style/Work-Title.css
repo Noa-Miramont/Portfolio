@@ -1,0 +1,61 @@
+.Title
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 10px 10px 10px;
+    gap: 100px;
+}
+
+h1
+{
+    font-family: 'inter', sans-serif;
+    font-size: 80px;
+    font-weight: bold;
+    color: #59F7FF;
+    text-transform: capitalize;
+}
+
+.Form
+{
+    width: 550px;
+}
+
+ul
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style: none;
+    border: none;
+}
+
+.Form-button 
+{
+    position: relative;
+    background: none;
+    border: none;
+    color: #59F7FF;
+    font-family: 'inter', sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+  
+.Form-button::after 
+{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0%;
+    height: 1px;
+    background-color: #59F7FF;
+    transition: width 0.3s ease;
+}
+  
+.Form-button:hover::after 
+{
+    width: 100%;
+}
