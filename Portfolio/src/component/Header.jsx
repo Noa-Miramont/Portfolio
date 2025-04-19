@@ -8,8 +8,8 @@ function Header () {
 
             <nav className="nav_bar">
                 <a className="Home" href="/">Home</a>
-                <a className="About" href="/About">About</a>
-                <a className="Contact" href="/Contact">Contact</a>
+                <a className="About" href="app.html#/ComingSoon">About</a>
+                <a className="Contact" href="app.html#/ComingSoon">Contact</a>
             </nav>
         </div>
     )

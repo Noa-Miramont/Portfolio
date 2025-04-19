@@ -134,6 +134,16 @@ body
 }
 
 
+.Work a, .About_me a, .Contact a
+{
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    color: rgb(160, 160, 160);
+    transition: 0.4s ease-in-out;
+    font-family: 'inter', sans-serif;
+
+}
+
 .Work, .About_me, .Contact
 {
     letter-spacing: 0.1em;
@@ -143,6 +153,10 @@ body
 
 .Work:hover, .About_me:hover, .Contact:hover
 {
-    color: rgb(255, 255, 255);
     font-size: 2.5rem;
+}
+
+.Work:hover a, .About_me:hover a, .Contact:hover a
+{
+    color: rgb(255, 255, 255);
 }

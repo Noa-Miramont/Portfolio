@@ -15,6 +15,34 @@
     background-position: center;
     border: solid 1px;
     border-color: white;
+    position: relative;
+    cursor: pointer
+}
+
+
+.items::after
+{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    opacity: 0;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'inter', sans-serif;
+    font-size: 50px;
+    text-align: center;
+    transition: opacity 0.3s ease;
+}
+
+.items:hover::after
+{
+    opacity: 0.4;
 }
 
 .item1, .item3, .item5, .item6
@@ -59,4 +87,19 @@
 
 .item5 {
     background-image: url('../../static/img/Portfolio-Figma.png');
+}
+
+.item1::after 
+{
+    content: "DELEGUE"
+}
+
+.item2::after 
+{
+    content: "INSTAGRAM FILTER"
+}
+
+.item5::after 
+{
+    content: "PORTFOLIO FIGMA MODEL"
 }

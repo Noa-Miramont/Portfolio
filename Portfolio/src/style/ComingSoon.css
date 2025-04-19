@@ -1,0 +1,15 @@
+.ComingSoon
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #171717;
+    height: 100vh;
+}
+
+h1
+{
+    font-family: 'inter', sans-serif;
+    font-size: 70px;
+    color: white;
+}
