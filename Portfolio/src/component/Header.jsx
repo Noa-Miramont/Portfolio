@@ -7,9 +7,9 @@ function Header () {
             <img src="../../static/icons/arrow_back.svg" />
 
             <nav className="nav_bar">
-                <a className="Home" href="/">Home</a>
-                <a className="About" href="app.html#/ComingSoon">About</a>
-                <a className="Contact" href="app.html#/ComingSoon">Contact</a>
+                <a href="/">Home</a>
+                <a href="app.html#/ComingSoon">About</a>
+                <a href="app.html#/ComingSoon">Contact</a>
             </nav>
         </div>
     )
