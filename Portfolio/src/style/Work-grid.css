@@ -70,23 +70,23 @@
 }
   
 .item1 {
-    background-image: url('../../static/img/Threejs-Forest.png');
+    background-image: url('/img/Threejs-Forest.png');
 }
   
 .item2 {
-    background-image: url('../../static/img/Filter.png');
+    background-image: url('/img/Filter.png');
 }
 
 .item3 {
-    background-image: url('../../static/img/WeNanFlemme.png');
+    background-image: url('/img/WeNanFlemme.png');
 }
 
 .item4 {
-    background-image: url('../../static/img/GrindIn.png');
+    background-image: url('/img/GrindIn.png');
 }
 
 .item5 {
-    background-image: url('../../static/img/Portfolio-Figma.png');
+    background-image: url('/img/Portfolio-Figma.png');
 }
 
 .item1::after 
