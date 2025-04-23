@@ -591,11 +591,12 @@ const LandingPage = () => {
     setOverlayMenuActive(newOverlayMenuActive);
     
     // Menu overlay animation
-    if (newOverlayMenuActive) {
-      gsap.to(".overlaymenu", { duration: 0.5, opacity: 0.75, delay: 0.2 });
-    } else {
-      gsap.to(".overlaymenu", { duration: 0.5, opacity: 0, delay: 0.2 });
-    }
+    gsap.to(overlayMaterialMenu.current.uniforms.uAlpha, {
+      value: newOverlayMenuActive ? 0.75 : 0,
+      duration: 0.5,
+      ease: "power2.out",
+      delay: 0.2
+    });
     
     // Burger icon animation
     if (burgerIconRef.current) {
