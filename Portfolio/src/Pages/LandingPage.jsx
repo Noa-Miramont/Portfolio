@@ -60,13 +60,16 @@ const LandingPage = () => {
     })
   )
 
+  const controlsRef = useRef();
+  const cameraRef = useRef();
+
   useEffect(() => {
     // Scene setup
     const canvas = canvasRef.current;
     const scene = new THREE.Scene();
 
     // Texture
-    const matcapTexture2 = new THREE.TextureLoader().load('/textures/text/matcapText2.png');
+    const matcapTexture2 = new THREE.TextureLoader().load('/textures/text/matcap.png');
 
     // Loaders
     const loadingManager = new THREE.LoadingManager(
@@ -342,10 +345,13 @@ const LandingPage = () => {
     camera.position.y = 1.46;
     camera.position.z = 2.16;
 
+    cameraRef.current = camera;
     scene.add(camera);
 
     // Controls
     const controls = new OrbitControls(camera, canvas);
+    controlsRef.current = controls;
+
     controls.enableDamping = true;
     controls.enabled = false;
     controls.target = cameraTarget;
@@ -652,8 +658,13 @@ const LandingPage = () => {
     
     // Hide menu and overlay
     setOverlayMenuActive(false);
-    gsap.to(".overlaymenu", { duration: 0.5, opacity: 0, delay: 0.2 });
-    
+    gsap.to(overlayMaterialMenu.current.uniforms.uAlpha, {
+      value: 0,
+      duration: 0.5,
+      ease: "power2.out",
+      delay: 0.2
+    });
+        
     if (menuRef.current) {
       menuRef.current.classList.remove('active');
       menuRef.current.style.visibility = 'hidden';
@@ -665,15 +676,22 @@ const LandingPage = () => {
     if (thirdBarRef.current) thirdBarRef.current.style.opacity = '0';
     
     // Camera animation before navigation
-    gsap.to(".camera-target", { x: -0.889, y: 0.84, z: -0.660, duration: 2.5, ease: "power3.inOut" });
-    gsap.to(".camera-position", { 
-      x: -0.889, 
-      y: 0.84, 
-      z: 0, 
-      duration: 2.2, 
-      ease: "power3.inOut", 
+    gsap.to(controlsRef.current.target, {
+      x: -0.889,
+      y: 0.84,
+      z: -0.660,
+      duration: 2.5,
+      ease: "power3.inOut"
+    });
+    
+    gsap.to(cameraRef.current.position, {
+      x: -0.889,
+      y: 0.84,
+      z: 0,
+      duration: 2.2,
+      ease: "power3.inOut",
       delay: 0.2,
-      onComplete: () => { 
+      onComplete: () => {
         navigate(path);
       }
     });

@@ -4,7 +4,7 @@ import '../style/Header.css'
 function Header () {
     return(
         <div className="Header">
-            <img src="../../static/icons/arrow_back.svg" />
+            <img src="../../public/icons/arrow_back.svg" />
 
             <nav className="nav_bar">
                 <a href="/">Home</a>

@@ -6,6 +6,7 @@ function WorkTitle() {
 
     const handleButtonClick = (button) => {
         setSelectedButton(button)
+        onButtonClick(button)
     }
 
     return (

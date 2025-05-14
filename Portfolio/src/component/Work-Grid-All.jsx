@@ -1,5 +1,5 @@
 import React from "react"
-import '../style/Work-grid.css'
+import '../style/Work-Grid.css'
 
 function Grid (){
     return(
