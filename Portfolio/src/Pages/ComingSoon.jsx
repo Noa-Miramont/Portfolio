@@ -3,7 +3,7 @@
 import React, { useEffect, useState, useRef } from 'react'
 import * as THREE from 'three'
 import { gsap } from 'gsap'
-import Lenis from '@studio-freight/lenis'
+import Lenis from 'lenis'
 import "../style/ComingSoon.css"
 
 import Header from '../component/NavBar'
