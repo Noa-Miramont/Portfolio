@@ -1,14 +1,36 @@
-.ComingSoon
+html
 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #171717;
-    height: 100vh;
+    overflow-y: auto !important;
+    background: #000000;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-h1
+/* Pour l'effet de push fluide inspiré de Sharlee */
+.arrow-wrapper {
+    opacity: 0;
+    transform: translateX(-24px) translateY(-50%);
+    transition: opacity 0.3s cubic-bezier(.77,0,.18,1), transform 0.3s cubic-bezier(.77,0,.18,1);
+    pointer-events: none;
+  }
+  
+  .group\/row:hover .arrow-wrapper {
+    opacity: 1;
+    transform: translateX(0) translateY(-50%);
+  }
+  
+  .project-title {
+    transition: padding-left 0.4s cubic-bezier(.77,0,.18,1);
+    padding-left: 0;
+  }
+  
+  .group\/row:hover .project-title {
+    padding-left: 32px; /* Ajuste selon la taille de ta flèche */
+  }
+
+
+.Titre
 {
-    font-family: 'inter', sans-serif;
-    font-size: 50px;
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
 }

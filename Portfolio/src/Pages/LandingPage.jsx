@@ -116,7 +116,7 @@ const LandingPage = () => {
     let ContactText = null;
 
     fontLoader.load(
-      '/fonts/helvetiker_regular.typeface.json',
+      '/fonts/Oswald Medium_Regular.json',
       (font) => {
         // Work Text
         const workGeometry = new TextGeometry(
@@ -229,7 +229,7 @@ const LandingPage = () => {
     // Computer screen
     const screenMesh = new THREE.Mesh(
       new THREE.PlaneGeometry(0.62, 0.32),
-      new THREE.MeshBasicMaterial({ color: '#171717' })
+      new THREE.MeshBasicMaterial({ color: '#000000' })
     );
     screenMesh.position.x = -0.889;
     screenMesh.position.y = 0.84;
@@ -394,7 +394,7 @@ const LandingPage = () => {
             ease: "power3.inOut", 
             delay: 0.2,
             onComplete: () => { 
-              navigate('/Work');
+              navigate('/ComingSoon');
             }
           });
 
@@ -709,8 +709,8 @@ const LandingPage = () => {
       </div>
       
       <div ref={menuRef} className="menu">
-        <div className="Work" onClick={(e) => handleNavigation(e, '/Work')}>
-          <a href="/Work">Work</a>
+        <div className="Work" onClick={(e) => handleNavigation(e, '/comingSoon')}>
+          <a href="/comingSoon">Work</a>
         </div>
         <div className="About_me" onClick={(e) => handleNavigation(e, '/ComingSoon')}>
           <a href="/ComingSoon">About me</a>

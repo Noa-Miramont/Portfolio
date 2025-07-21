@@ -1,0 +1,11 @@
+Model Information:
+* title:	Bank Card
+* source:	https://sketchfab.com/3d-models/bank-card-4bdf88866ed6462480bf84744271fe4b
+* author:	sl8k3r (https://sketchfab.com/sl8k3r)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Bank Card" (https://sketchfab.com/3d-models/bank-card-4bdf88866ed6462480bf84744271fe4b) by sl8k3r (https://sketchfab.com/sl8k3r) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
