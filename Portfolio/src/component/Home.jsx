@@ -1,9 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react'
 import { gsap } from 'gsap'
-import Header from './NavBar'
 import "../style/Home.css"
 
-const Home = ({ activePage, onHomeClick, onAboutClick }) => {
+const Home = ({ activePage, onHomeClick, onAboutClick, onFlotteqClick, onRoomClick, onDelegueClick, onHeticverseClick, onWenanflemmeClick }) => {
   const scrollTextRef = useRef(null)
   const leftBarRef = useRef(null)
   const rightBarRef = useRef(null)
@@ -63,6 +62,10 @@ const Home = ({ activePage, onHomeClick, onAboutClick }) => {
       ease: "power2.out",
     }, "-=0.1")
   }
+
+  useEffect(() => {
+            window.scrollTo(0, 0) // Scroll instantané
+        }, [])
 
   useEffect(() => {
     playFirstSectionAnimations()
@@ -178,6 +181,7 @@ const Home = ({ activePage, onHomeClick, onAboutClick }) => {
           <div className='flex flex-col items-center justify-center border-t border-white py-[20px] w-full cursor-pointer group/row'
             onMouseEnter={() => setHoveredProject('flotteq')}
             onMouseLeave={() => setHoveredProject(null)}
+            onClick={onFlotteqClick}
           >
               <div className='flex flex-row items-center justify-between w-full'>
                 <div className='flex flex-row items-center gap-0 relative overflow-hidden'>
@@ -207,6 +211,7 @@ const Home = ({ activePage, onHomeClick, onAboutClick }) => {
             <div className='flex flex-col items-center justify-center border-t border-white py-[20px] w-full cursor-pointer group/row'
               onMouseEnter={() => setHoveredProject('heticverse')}
               onMouseLeave={() => setHoveredProject(null)}
+              onClick={onHeticverseClick}
             >
               <div className='flex flex-row items-center justify-between w-full'>
                 <div className='flex flex-row items-center gap-0 relative overflow-hidden'>
@@ -236,6 +241,7 @@ const Home = ({ activePage, onHomeClick, onAboutClick }) => {
             <div className='flex flex-col items-center justify-center border-t border-white py-[20px] w-full cursor-pointer group/row'
               onMouseEnter={() => setHoveredProject('wenanflemme')}
               onMouseLeave={() => setHoveredProject(null)}
+              onClick={onWenanflemmeClick}
             >
               <div className='flex flex-row items-center justify-between w-full'>
                 <div className='flex flex-row items-center gap-0 relative overflow-hidden'>
@@ -265,6 +271,7 @@ const Home = ({ activePage, onHomeClick, onAboutClick }) => {
             <div className='flex flex-col items-center justify-center border-t border-white py-[20px] w-full cursor-pointer group/row'
               onMouseEnter={() => setHoveredProject('delegue')}
               onMouseLeave={() => setHoveredProject(null)}
+              onClick={onDelegueClick}
             >
               <div className='flex flex-row items-center justify-between w-full'>
                 <div className='flex flex-row items-center gap-0 relative overflow-hidden'>
@@ -352,6 +359,7 @@ const Home = ({ activePage, onHomeClick, onAboutClick }) => {
             <div className='flex flex-col items-center justify-center border-t border-white py-[20px] w-full cursor-pointer group/row'
               onMouseEnter={() => setHoveredProject('room')}
               onMouseLeave={() => setHoveredProject(null)}
+              onClick={onRoomClick}
             >
               <div className='flex flex-row items-center justify-between w-full'>
                 <div className='flex flex-row items-center gap-0 relative overflow-hidden'>
@@ -444,7 +452,7 @@ const Home = ({ activePage, onHomeClick, onAboutClick }) => {
                 >
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
-                <a className="text-[12px] sm:text-[14px] md:text-[16px]" href="https://www.noamiramont.com/css/img/picto-quiz.png" target='_blank'>Download my CV</a>
+                <a className="text-[12px] sm:text-[14px] md:text-[16px]" href="/CVNoaMiramont.pdf" download >Download my CV</a>
                 <span className="absolute left-0 -bottom-px h-px w-0 bg-gradient-to-r from-[#E7B2AB] to-[#7B83CA] transition-all duration-600 group-hover:w-full"></span>
               </div>
             </div>

@@ -3,7 +3,7 @@ import * as THREE from 'three'
 import Lenis from 'lenis'
 import { gsap } from 'gsap'
 
-const Background = ({ rotateCamera }) => {
+const Background = ({ activePage, cameraMode }) => {
   const canvasRef = useRef(null)
   const loaderRef = useRef(null)
   const [isLoaded, setIsLoaded] = useState(false)
@@ -31,12 +31,12 @@ const Background = ({ rotateCamera }) => {
     /**
      * particles Front
      */
-    const particlesCount = 500
+    const particlesCount = 1000
     const positions = new Float32Array(particlesCount * 3)
 
     for(let i = 0; i < particlesCount; i++) {
       positions[i * 3 + 0] = (Math.random() - 0.5) * 10
-      positions[i * 3 + 1] = objectDistance * 0.5 - Math.random() * objectDistance * 3
+      positions[i * 3 + 1] = objectDistance * 0.5 - Math.random() * objectDistance * 6
       positions[i * 3 + 2] = (Math.random() - 0.5) * 10
     }
 
@@ -188,25 +188,43 @@ const Background = ({ rotateCamera }) => {
     }
   }, [isLoaded])
 
-  // Effet pour la rotation de la caméra
-  useEffect(() => {
-    if (cameraRef.current) {
-      isAnimatingRef.current = true
-      gsap.to(cameraRef.current.position, {
-        y: 0,
-        duration: 1,
-        ease: 'power2.inOut'
-      })
-      gsap.to(cameraRef.current.rotation, {
-        y: rotateCamera ? Math.PI : 0,
-        duration: 1,
-        ease: 'power2.inOut',
-        onComplete: () => {
-          isAnimatingRef.current = false
-        }
-      })
-    }
-  }, [rotateCamera])
+
+// Animation pour Home et About : rotation + repositionnement
+useEffect(() => {
+  if (cameraRef.current && (activePage === 'Home' || activePage === 'About')) {
+    isAnimatingRef.current = true;
+    gsap.to(cameraRef.current.position, {
+      y: 0,
+      duration: 1,
+      ease: 'power2.inOut',
+      onComplete: () => {
+        isAnimatingRef.current = false;
+      }
+    })
+    gsap.to(cameraRef.current.rotation, {
+      y: activePage === 'About' ? Math.PI : 0,
+      duration: 1,
+      ease: 'power2.inOut',
+    })
+  }
+}, [activePage])
+
+// Animation pour toutes les pages projets : juste Y (pas de rotation)
+useEffect(() => {
+  const projectPages = ['Flotteq', 'Room', 'Delegue', 'Heticverse', 'Wenanflemme']
+  if (cameraRef.current && projectPages.includes(activePage)) {
+    isAnimatingRef.current = true;
+    gsap.to(cameraRef.current.position, {
+      y: 0,
+      duration: 1,
+      ease: 'power2.inOut',
+      onComplete: () => {
+        isAnimatingRef.current = false;
+      }
+    })
+    // Pas de rotation
+  }
+}, [activePage])
 
   return (
     <>
