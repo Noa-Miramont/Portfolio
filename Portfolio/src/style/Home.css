@@ -1,6 +1,7 @@
 html
 {
     overflow-y: auto !important;
+    overflow-x: hidden !important;
     background: #000000;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

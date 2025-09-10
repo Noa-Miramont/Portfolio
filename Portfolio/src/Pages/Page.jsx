@@ -11,6 +11,7 @@ import Room from '../component/Works/Room'
 import Delegue from '../component/Works/Delegue'
 import Heticverse from '../component/Works/Heticverse'
 import Wenanflemme from '../component/Works/Wenanflemme'
+import LesMauvaises from '../component/Works/Les-mauvaises'
 import { AnimatePresence, motion } from 'framer-motion'
 
 const Page = () => {
@@ -46,6 +47,10 @@ const Page = () => {
     setActivePage('Wenanflemme')
     setRotateCamera(true)
   }
+  const handleLesMauvaisesClick = () => {
+    setActivePage('LesMauvaises')
+    setRotateCamera(true)
+  }
   return (
     <div>
       <Background rotateCamera={rotateCamera} activePage={activePage} />
@@ -67,6 +72,7 @@ const Page = () => {
               activePage={activePage} 
               onHomeClick={handleHomeClick} 
               onAboutClick={handleAboutClick} 
+              onLesMauvaisesClick={handleLesMauvaisesClick}
               onFlotteqClick={handleFlotteqClick}
               onRoomClick={handleRoomClick}
               onDelegueClick={handleDelegueClick}
@@ -128,6 +134,17 @@ const Page = () => {
             transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
           >
             <About />
+          </motion.div>
+        )}
+        {activePage === 'LesMauvaises' && (
+          <motion.div
+            key="les-mauvaises"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -40 }}
+            transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+          >
+            <LesMauvaises />
           </motion.div>
         )}
         {activePage === 'Flotteq' && (

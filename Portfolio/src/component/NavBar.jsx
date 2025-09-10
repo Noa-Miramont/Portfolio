@@ -6,9 +6,9 @@ const Header = ({ activePage, onHomeClick, onAboutClick }) => {
     <header>
       <nav className="flex flex-row fixed justify-between w-full mix-blend-exclusion z-10 p-5">        
 
-        <a className="" href="_blank">
+        <div className="">
           <img src="/icons/NM_logo.svg" className='h-[20px]'/>
-        </a>
+        </div>
 
         <div className='flex row gap-[35px]'>
           <button

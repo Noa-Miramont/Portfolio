@@ -87,18 +87,14 @@ const Delegue = () => {
           </div>
         </div>
         <div className="w-full max-w-5xl flex flex-col items-center">
-          <div className="w-full bg-[#222] rounded-xl flex items-center justify-center overflow-hidden">
-            <img
-                src="/img/DelegueRoad2.png"
-                className="w-full  rounded-xl"
-              />
-          </div>
-        </div>
-        <div className="w-full max-w-5xl flex flex-col items-center">
-          <h3 className="text-white font-kalnia text-lg md:text-xl mb-2 tracking-widest">DEMO</h3>
+          <h3 className="text-white font-kalnia text-lg md:text-xl mb-2 tracking-widest">ENDING</h3>
           <div className="w-full bg-[#222] rounded-xl flex items-center justify-center overflow-hidden">
             <video
                 src="/videos/delegueEnding.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
                 className="w-full h-full rounded-xl"
               />
           </div>

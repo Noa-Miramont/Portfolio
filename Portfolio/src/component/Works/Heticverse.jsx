@@ -58,30 +58,6 @@ const Heticverse = () => {
               />
           </div>
         </div>
-        <div className="w-full max-w-5xl flex flex-col md:flex-row gap-12 items-start">
-          <div className="flex-1 flex flex-col items-center">
-            <div className="text-white font-kalnia text-base md:text-lg mb-2 tracking-widest">OLD LOGIN PAGE</div>
-            <div className="w-full aspect-video bg-[#222] rounded-xl flex items-center justify-center overflow-hidden">
-              <img
-                src="/img/FlotteqOld.png"
-                className="w-full h-full object-cover rounded-xl"
-              />
-            </div>
-          </div>
-          <div className="flex-1 flex flex-col items-center">
-            <div className="text-white font-kalnia text-base md:text-lg mb-2 tracking-widest">NEW LOGIN PAGE</div>
-            <div className="w-full aspect-video bg-[#222] rounded-xl flex items-center justify-center overflow-hidden">
-              <video
-                src="/videos/flotteqNew.mp4"
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="w-full h-full object-cover rounded-xl"
-              />
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   )

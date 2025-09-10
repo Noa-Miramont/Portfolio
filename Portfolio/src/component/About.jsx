@@ -6,16 +6,16 @@ const About = () => {
     }, [])
 
     return(
-        <div>
+        <div className="w-full overflow-x-hidden">
             <section className="flex flex-col items-center justify-center h-screen relative px-4 sm:px-8 md:px-[5%]">
-                <h1 className="Titre z-10 text-[60px] md:text-[80px] lg:text-[100px] text-white font-kalnia font-light mb-2 sm:mb-4 text-center"> ABOUT ME</h1>
+                <h1 className="Titre z-10 text-[50px] md:text-[75px] lg:text-[100px] text-white font-kalnia font-light mb-2 sm:mb-4 text-center"> ABOUT ME</h1>
             </section>
 
             <section className="flex flex-col items-center justify-center gap-[75px] h-screen relative px-4 sm:px-8 md:px-[5%]">
-                <div className="self-start ml-[200px]">
+                <div className="self-start ml-[0px] md:ml-[200px]  ">
                     <h2 className="text-white font-kalnia font-light text-[40px] md:text-[50pxpx] lg:text-[75px] ">WHO AM I?</h2>
                 </div>
-                <div className="self-end mr-[135px] w-[600px]">
+                <div className="self-center md:self-end mr-[135px] mr-[135px] md:mr-[0px] w-[600px]">
                     <p className="text-white font-roboto font-thin text-[12px] md:text-[14px] lg:text-[16px]">Hello! I’m <span className="font-medium">Noa Miramont</span>, a <span className="font-medium">creative developer</span> based in <span className="font-medium">Paris</span>, passionate about crafting engaging digital experiences where <span className="font-medium">design</span> and <span className="font-medium">technology</span> meet in unexpected <br/><br/>
 
                         I’m currently in my second year of a <span className="font-medium">Bachelor’s degree</span> in <span className="font-medium">Web Development</span> at <span className="font-medium">HETIC</span> and expanding my skills as a <span className="font-medium">UI designer and frontend dev</span> intern at Flotteq.<br/>

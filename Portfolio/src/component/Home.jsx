@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react'
 import { gsap } from 'gsap'
 import "../style/Home.css"
 
-const Home = ({ activePage, onHomeClick, onAboutClick, onFlotteqClick, onRoomClick, onDelegueClick, onHeticverseClick, onWenanflemmeClick }) => {
+const Home = ({ activePage, onHomeClick, onAboutClick, onLesMauvaisesClick ,onFlotteqClick, onRoomClick, onDelegueClick, onHeticverseClick, onWenanflemmeClick }) => {
   const scrollTextRef = useRef(null)
   const leftBarRef = useRef(null)
   const rightBarRef = useRef(null)
@@ -64,10 +64,6 @@ const Home = ({ activePage, onHomeClick, onAboutClick, onFlotteqClick, onRoomCli
   }
 
   useEffect(() => {
-            window.scrollTo(0, 0) // Scroll instantané
-        }, [])
-
-  useEffect(() => {
     playFirstSectionAnimations()
   }, [])
 
@@ -111,7 +107,7 @@ const Home = ({ activePage, onHomeClick, onAboutClick, onFlotteqClick, onRoomCli
 
   return (
     <>
-      <section className="flex flex-col items-center justify-center h-screen relative px-4 sm:px-8 md:px-[5%]">
+      <section className="flex flex-col items-center justify-center h-screen relative px-1 sm:px-8 md:px-[5%]">
         <div className='flex flex-col items-center'>
           <h1 className="Titre relative z-10 text-[60px] md:text-[80px] lg:text-[100px] font-cabin font-normal mb-2 sm:mb-4 text-center">
             <span
@@ -149,11 +145,11 @@ const Home = ({ activePage, onHomeClick, onAboutClick, onFlotteqClick, onRoomCli
             <video
               ref={videoRef}
               src={
+                visibleProject === 'les-mauvaises' ? '/videos/les-mauvaises.mp4' :
                 visibleProject === 'flotteq' ? '/videos/flotteq.mp4' :
                 visibleProject === 'heticverse' ? '/videos/heticverse.mp4' :
                 visibleProject === 'wenanflemme' ? '/videos/wenanflemme.mp4' :
                 visibleProject === 'delegue' ? '/videos/delegue.mp4' :
-                visibleProject === 'unity' ? '/videos/unity.mp4' :
                 visibleProject === 'music' ? '/videos/musicplayer.mp4' :
                 visibleProject === 'room' ? '/videos/room.mp4' :
                 ''
@@ -178,6 +174,38 @@ const Home = ({ activePage, onHomeClick, onAboutClick, onFlotteqClick, onRoomCli
         {/* Panel projets prend toute la largeur sous 1075px */}
         <div className="flex flex-col w-full lg:w-3/8 mt-8 lg:mt-0">
           {/* ... Les panels projets ... */}
+
+          <div className='flex flex-col items-center justify-center border-t border-white py-[20px] w-full cursor-pointer group/row'
+            onMouseEnter={() => setHoveredProject('les-mauvaises')}
+            onMouseLeave={() => setHoveredProject(null)}
+            onClick={onLesMauvaisesClick}
+          >
+              <div className='flex flex-row items-center justify-between w-full'>
+                <div className='flex flex-row items-center gap-0 relative overflow-hidden'>
+                  <span className="arrow-wrapper block absolute left-0 top-2/2 -translate-y-1/2">
+                    <svg
+                      className="arrow-svg"
+                      width="28"
+                      height="28"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="white"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </span>
+                  <h3 className='project-title text-white font-kalnia font-semibold text-xl uppercase pl-0 transition-all duration-500'>
+                    Les mauvaises - Portfolio
+                  </h3>
+                </div>
+                <p className='text-white font-roboto font-extralight font- text-sm'>Front end - UI / UX design</p>
+              </div>
+            </div>
+
+
           <div className='flex flex-col items-center justify-center border-t border-white py-[20px] w-full cursor-pointer group/row'
             onMouseEnter={() => setHoveredProject('flotteq')}
             onMouseLeave={() => setHoveredProject(null)}
@@ -295,64 +323,6 @@ const Home = ({ activePage, onHomeClick, onAboutClick, onFlotteqClick, onRoomCli
                   </h3>
                 </div>
                 <p className='text-white font-roboto font-extralight font- text-sm'>Front end</p>
-              </div>
-            </div>
-
-            <div className='flex flex-col items-center justify-center border-t border-white py-[20px] w-full cursor-pointer group/row'
-              onMouseEnter={() => setHoveredProject('unity')}
-              onMouseLeave={() => setHoveredProject(null)}
-            >
-              <div className='flex flex-row items-center justify-between w-full'>
-                <div className='flex flex-row items-center gap-0 relative overflow-hidden'>
-                  <span className="arrow-wrapper block absolute left-0 top-2/2 -translate-y-1/2">
-                    <svg
-                      className="arrow-svg"
-                      width="28"
-                      height="28"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="white"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path d="M5 12h14M12 5l7 7-7 7" />
-                    </svg>
-                  </span>
-                  <h3 className='project-title text-white font-kalnia font-semibold text-xl uppercase pl-0 transition-all duration-500'>
-                    UNITY GAME
-                  </h3>
-                </div>
-                <p className='text-white font-roboto font-extralight font- text-sm'>Game dev</p>
-              </div>
-            </div>
-
-            <div className='flex flex-col items-center justify-center border-t border-white py-[20px] w-full cursor-pointer group/row'
-              onMouseEnter={() => setHoveredProject('music')}
-              onMouseLeave={() => setHoveredProject(null)}
-            >
-              <div className='flex flex-row items-center justify-between w-full'>
-                <div className='flex flex-row items-center gap-0 relative overflow-hidden'>
-                  <span className="arrow-wrapper block absolute left-0 top-2/2 -translate-y-1/2">
-                    <svg
-                      className="arrow-svg"
-                      width="28"
-                      height="28"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="white"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path d="M5 12h14M12 5l7 7-7 7" />
-                    </svg>
-                  </span>
-                  <h3 className='project-title text-white font-kalnia font-semibold text-xl uppercase pl-0 transition-all duration-500'>
-                    MUSIC PLAYER
-                  </h3>
-                </div>
-                <p className='text-white font-roboto font-extralight font- text-sm'>UI design</p>
               </div>
             </div>
 

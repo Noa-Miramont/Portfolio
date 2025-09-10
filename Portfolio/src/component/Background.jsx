@@ -211,7 +211,7 @@ useEffect(() => {
 
 // Animation pour toutes les pages projets : juste Y (pas de rotation)
 useEffect(() => {
-  const projectPages = ['Flotteq', 'Room', 'Delegue', 'Heticverse', 'Wenanflemme']
+  const projectPages = ['Flotteq', 'Room', 'Delegue', 'Heticverse', 'Wenanflemme', 'LesMauvaises']
   if (cameraRef.current && projectPages.includes(activePage)) {
     isAnimatingRef.current = true;
     gsap.to(cameraRef.current.position, {
@@ -228,7 +228,7 @@ useEffect(() => {
 
   return (
     <>
-      <canvas ref={canvasRef} className="fixed top-0 left-0 outline-none" />
+      <canvas ref={canvasRef} className="fixed top-0 left-0 -z-10 pointer-events-none outline-none" />
       <div
         ref={loaderRef}
         className="fixed top-0 left-0 w-full h-full bg-black pointer-events-none"
